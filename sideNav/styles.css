@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.side-section-container{
+    display: flex;
+    max-height: 100svh;
+    max-width: 100dvw;
+    height: 100vh;
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    max-width: 100dvw;
+    max-height: 100svh;
+    overflow: hidden;
+}
+
+#menuCheckbox {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    height: 10%;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+#sideMenu {
+    background-color: #333;
+    width: 250px;
+    /* display with toolbar */
+    /* height: 90%; */
+    height: 100%;
+    top: 0;
+    /* scrollbar-width: none; */
+}
+
+#sideMenu ul {
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+    padding-right: 17px;
+    box-sizing: content-box;
+}
+
+#sideMenu ul li {
+    padding: 5px;
+}
+
+#sideMenu ul li a {
+    color: #fff;
+    text-decoration: none;
+    /* border: 1px solid; */
+    padding: 0.5rem;
+    display: block;
+    transition: all 0.5s ease-out;
+}
+
+#sideMenu ul li a:hover,
+#sideMenu ul li a:focus {
+  background-color: #fff;
+  color: #333;
+}
+
+#mainContent {
+    max-width: 100dvw;
+    padding: 20px;
+    box-sizing: content-box;
+    transition: margin-left 0.3s;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .side-section-container{
+        flex-direction: column;
+    }
+
+    .menu-icon {
+        display: block;
+        height: auto;
+    }
+
+    #sideMenu {
+        height: 100%;
+        position: fixed;
+        left: -250px;
+        transition: left 0.3s;
+        overflow: hidden
+    }
+
+    #menuToggle input:checked + label + #overlay + #sideMenu {
+        left: 0;
+    }
+
+    #menuCheckbox:checked + label + #overlay {
+        display: block;
+    }
+
+    /* #menuToggle input:checked + label + #sideMenu + #overlay + #mainContent {
+        margin-left: 250px;
+    } */
+}
