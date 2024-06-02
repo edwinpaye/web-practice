@@ -1,4 +1,3 @@
-// script.js
 window.addEventListener('scroll', function() {
     const toolbar = document.querySelector('.toolbar');
     const placeholder = document.querySelector('.placeholder');
