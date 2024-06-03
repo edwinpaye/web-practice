@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header with Submenus</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#">MyLogo</a>
+            </div>
+            <div class="overlay"></div>
+            <nav class="nav-bar">
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="#">About &blacktriangledown;</a>
+                        <div class="dropdown-wraper">
+                            <ul class="dropdown-content">
+                                <li><a href="#">Submenu 1</a></li>
+                                <li><a href="#">Submenu 2</a></li>
+                                <li><a href="#">Submenu 3</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">About &blacktriangledown;</a>
+                        <div class="dropdown-wraper">
+                            <ul class="dropdown-content">
+                                <li><a href="#">Submenu 1</a></li>
+                                <li><a href="#">Submenu 2</a></li>
+                                <li><a href="#">Submenu 3</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Services</a>
+                        <div class="dropdown-wraper">
+                            <ul class="dropdown-content">
+                                <li><a href="#">Submenu 1</a></li>
+                                <li><a href="#">Submenu 2</a></li>
+                                <li><a href="#">Submenu 3</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="action-buttons">
+                <a href="#log-in" title="Log in" class="primary">
+                    Sign in
+                </a>
+            </div>
+            <div class="menu-toggle">
+                &#9776;
+            </div>
+        </div>
+    </header>
+    <div class="body-content url-fs"></div>
+    <div class="body-content"></div>
+    <script src="script.js"></script>
+</body>
+</html>

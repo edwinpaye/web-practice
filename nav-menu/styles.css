@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #3ECF8E;
+    --primary-dark: #37996B;
+    --primary-darker: #317F5A;
+    --text: #333;
+    --background: #1C1C1C;
+    --secondary: #2E2E2E;
+    --gray-border: #3E3E3E;
+    --gray-border-hover: #505050;
+    --gray-menu-button: #7E7E7E;
+    --gray-menu-button-hover: #232323;
+    --navbar-height: 4rem;
+    --gray-text-hover: #8F8F8F;
+    --gray-icon: #A0A0A0;
+}
+
+.header {
+    position: fixed;
+    width: 100dvw;
+    /* border-bottom: 1px solid var(--gray-border); */
+    height: var(--navbar-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.7);
+    /* backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+}
+
+.container {
+    /* position: fixed; */
+    display: flex;
+    width: 100%;
+    max-width: 1250px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    color: white;
+    /* position: relative; */
+}
+
+.nav-links li {
+    /* position: relative; */
+}
+
+a {
+    text-decoration: none;
+    color: #f3f3f3;
+}
+
+.dropdown-wraper {
+    position: absolute;
+    padding-top: 1.3rem;
+}
+
+.dropdown-content {
+    list-style: none;
+    background-color: #bebebe;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+
+    border-radius: 0.5rem;
+    display: none;
+    padding: 0.5rem;
+    margin: 0;
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid var(--gray-border);
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.menu-toggle {
+    display: none;
+    color: #f3f3f3;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background-color: transparent;
+}
+
+.overlay {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.99) translateY(-0.7em);
+        transform-origin: top;
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-bar {
+        position: fixed;
+        /* change heiht to add toolbar */
+        height: 98%;
+        width: 250px;
+        top: 0;
+        left: -250px;
+        background-color: #333;
+        border-radius: 8px;
+        margin: 5px;
+        opacity: 0;
+        box-sizing: border-box;
+        /* scrollbar-width: none; */
+        transition: all 0.3s;
+        overflow: hidden
+    }
+
+    .overlay.active {
+        position: fixed;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .overlay.active + .nav-bar {
+        opacity: 1;
+        left: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        max-height: 100svh;
+        width: 100%;
+        height: 100%;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        overflow-y: scroll;
+        overscroll-behavior: contain;
+        padding-right: 17px;
+        box-sizing: content-box;
+    }
+
+    .nav-links li {
+        padding: 5px;
+    }
+
+    .nav-links li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0.5rem;
+        display: block;
+        transition: all 0.5s ease-out;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a:focus {
+        background-color: #fff;
+        color: #333;
+    }
+
+    .dropdown-content {
+        position: static;
+    }
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+
+    .action-buttons {
+        order: -1;
+    }
+}
+
+.body-content {
+    background: limegreen;
+    width: 100%;
+    height: 100svh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.url-fs {
+    background: url('https://source.unsplash.com/random/800x600') no-repeat center center/cover;
+}
